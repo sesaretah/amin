@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.avatar.attach(params[:avatar])
     if @product.save
       redirect_to '/'
     end
@@ -30,6 +31,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :category_id, :promote, :rank)
+    params.require(:product).permit(:name, :description, :category_id, :promote, :rank, :avatar,:price)
   end
 end

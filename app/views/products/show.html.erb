@@ -31,7 +31,7 @@
       <div class="row">
         <div class="col-12 col-md-4 col-lg-4">
           <div class="card">
-            <div class="card-img-top img-responsive img-responsive-16by9" style="background-image: url(https://picsum.photos/200/300)"></div>
+            <div class="card-img-top img-responsive img-responsive-16by9" style="background-image: url(<%= Rails.application.routes.url_helpers.rails_blob_path(@product.avatar, only_path: true)%>)"></div>
           </div>
         </div>
         <div class="col-12 col-md-8 col-lg-8">
@@ -43,7 +43,11 @@
               <%= raw @product.description %>
             </div>
             <div class="card-footer">
-
+              <% if @product.price%>
+‍               <b><%= @product.price%></b> <%=t :toman%>
+              <%else%>
+                <%=t :pls_call%>
+              <%end%>
             </div>
           </div>
         </div>
