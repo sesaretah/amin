@@ -1,0 +1,26 @@
+<%= render "/home/sidebar" %>
+<div class="page">
+  <div class="content">
+    <div class="container-xl">
+      <!-- Page title -->
+      <div class="page-header d-print-none">
+        <div class="row align-items-center">
+          <div class="col">
+            <!-- Page pre-title -->
+            <div class="page-pretitle">
+
+            </div>
+            <h2 class="page-title">
+              
+            </h2>
+          </div>
+          <!-- Page title actions -->
+
+        </div>
+      </div>
+      <div class="row row-deck row-cards">
+        <%= render "/categories/form", locals: { category: @category } %>
+      </div>
+    </div>
+  </div>
+</div>

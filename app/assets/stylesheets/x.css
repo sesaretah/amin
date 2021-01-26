@@ -1,0 +1,20 @@
+.navbar-vertical.navbar-expand-lg .navbar-collapse .dropdown-menu .dropdown-item {
+    padding-right: 3rem;
+}
+
+body {
+  font-family: 'iransans' !important;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.i-b {
+  display: inline-block;
+}
+
+.mh-200 {
+  height: auto;
+  min-height: 250px;
+}

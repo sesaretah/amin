@@ -1,0 +1,53 @@
+<%= render "/home/sidebar" %>
+<div class="page">
+  <div class="content">
+    <div class="container-xl">
+      <!-- Page title -->
+      <div class="page-header d-print-none">
+        <div class="row align-items-center">
+          <div class="col">
+            <!-- Page pre-title -->
+            <div class="page-pretitle">
+
+            </div>
+            <h2 class="page-title">
+              <%= t :show_product%>
+            </h2>
+          </div>
+          <!-- Page title actions -->
+          <div class="col-auto ml-auto d-print-none">
+            <div class="btn-list">
+              <a href="/products/<%= @product.id%>/edit" class="btn btn-primary d-none d-sm-inline-block" >
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" /><path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" /><line x1="16" y1="5" x2="19" y2="8" /></svg>
+                <%= t :edit_product %>
+              </a>
+              <a href="#" class="btn btn-primary d-sm-none btn-icon" data-toggle="modal" data-target="#modal-report" aria-label="Create new report">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 col-lg-4">
+          <div class="card">
+            <div class="card-img-top img-responsive img-responsive-16by9" style="background-image: url(https://picsum.photos/200/300)"></div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8 col-lg-8">
+          <div class="card">
+            <div class="card-header">
+              <%= @product.name %>
+            </div>
+            <div class="card-body mh-200">
+              <%= raw @product.description %>
+            </div>
+            <div class="card-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

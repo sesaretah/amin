@@ -1,0 +1,30 @@
+<div class="col-12">
+  <%= form_for(@product, html: { class: "card" }) do |f| %>
+  <div class="card-header">
+    <h4 class="card-title"><%= t :products_form %></h4>
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <label class="form-label"><%= t :name %></label>
+      <%= f.text_field :name, class: "form-control", placeholder: t(:name) %>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><%= t :description %></label>
+      <%= f.cktext_area :description, class: "form-control", ckeditor: { language: "fa" } %>
+    </div>
+    <div class="mb-3">
+      <label class="form-label"><%= t :category %></label>
+      <%= f.select :category_id, options_for_select(Category.all.collect { |p| [p.name, p.id] }), {}, { class: "form-control" } %>
+    </div>
+    <div class="mb-3">
+      <label class="form-check form-switch i-b">
+        <%= f.check_box :promote, class: "form-check-input"%>
+        <span class="form-check-label"><%=t :promote%></span>
+      </label>
+    </div>
+  </div>
+  <div class="card-footer text-right">
+    <button type="submit" class="btn btn-primary"><%= t :submit %></button>
+  </div>
+  <% end %>
+</div>

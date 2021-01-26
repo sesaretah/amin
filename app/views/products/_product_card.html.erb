@@ -1,0 +1,31 @@
+
+<% if !products.blank?%>
+<hr class='mb-1' />
+<div class="row">
+  <div class="col">
+    <h2 class="page-title mb-2"><%= products.first.category.name%></h2>
+  </div>
+</div>
+<div class="row row-deck row-cards" style='     flex-wrap: initial;   flex: 1;
+    display: flex;
+    overflow: auto;' id='list-<%= products.first.category.id%>'>
+  <% for product in products %>
+
+  <div class="col-sm-6 col-md-4 col-lg-4 mb-1">
+    <div class="card">
+      <div class="card-img-top img-responsive img-responsive-16by9" style="background-image: url(https://picsum.photos/200/300)"></div>
+      <div class="card-body">
+        <a href='/products/<%= product.id%>_<%= product.name%>'>
+          <h3 class="card-title"><%= product.name%></h3>
+          <p class='fs-12'></p>
+        </a>
+      </div>
+      <div class="card-footer">
+        This is standard card footer
+      </div>
+    </div>
+  </div>
+
+  <%end%>
+</div>
+<%end%>
